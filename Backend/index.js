@@ -1,20 +1,17 @@
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-
-const authRoutes = require('./routes/auth');
-const bookRoutes = require('./routes/books');
-const reservationRoutes = require('./routes/reservations');
-
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+const port = 3001;
 
-app.use('/api/auth', authRoutes);
-app.use('/api/books', bookRoutes);
-app.use('/api/reservations', reservationRoutes);
+// Permitir JSON no corpo das requisições
+app.use(express.json());
 
-app.get('/', (req, res) => res.send('BiblioConecta backend funcionando!'));
+// Importar rotas
+const bookRoutes = require('./routes/books');
 
-const PORT = 3001;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+// Usar rotas
+app.use('/books', bookRoutes);
+
+// Iniciar servidor
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
