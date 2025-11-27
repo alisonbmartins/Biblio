@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { ScrollView } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import api from "../api/api";
-import BookCard from "../components/BookCard";
 
 export default function CatalogScreen({ navigation }) {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    api.get("/books").then(res => setBooks(res.data));
+    api.get('/books').then(res => setBooks(res.data));
   }, []);
 
   return (
-    <ScrollView>
-      {books.map(book => (
-        <BookCard key={book.id} book={book} onPress={(id) => navigation.navigate("BookDetail", { id })} />
-      ))}
-    </ScrollView>
+    <View>
+      <Text>Catálogo de Livros</Text>
+      <FlatList
+        data={books}
+        keyExtractor={item => item.id.toString()}
+        renderItem={({ item }) => (
+          <TouchableOpacity onPress={() => navigation.navigate('BookDetail', { id: item.id })}>
+            <Text>{item.title} - {item.author}</Text>
+          </TouchableOpacity>
+        )}
+      />
+    </View>
   );
 }
