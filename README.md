@@ -61,23 +61,6 @@ Ao mesmo tempo, administradores têm acesso a um painel completo para gerenciar 
 
 🏗️ Arquitetura
 
-O sistema segue um modelo REST com separação clara entre camadas:
-
-BibliotecaConecta
-│
-├── Backend (Node.js + Express + SQLite + Prisma)
-│     ├── Serviços e rotas REST
-│     ├── Autenticação via JWT
-│     └── Persistência com Prisma ORM
-│
-├── Frontend Web (React)
-│     ├── Interface do usuário
-│     └── Consumo da API REST com Axios
-│
-└── Mobile (React Native - Expo)
-      ├── App para usuários
-      └── Notificações e reservas
-
 🛠️ Tecnologias
 Backend
 
@@ -107,29 +90,6 @@ Axios
 
 AsyncStorage
 
-📦 Estrutura do Repositório
-BibliotecaConecta/
-│
-├── backend/
-│   ├── prisma/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── middlewares/
-│   │   └── server.js
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   └── api/
-│   └── package.json
-│
-└── mobile/
-    ├── app/
-    ├── components/
-    └── package.json
 
 ▶️ Como Rodar o Projeto
 🔌 Backend
