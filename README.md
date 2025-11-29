@@ -119,46 +119,10 @@ npm install
 npx expo start
 
 
-Escaneie o QR Code usando o aplicativo Expo Go.
 
 📘 API
 
 A API segue o padrão REST.
-
-Principais endpoints:
-
-POST /auth/login
-POST /auth/register
-GET  /books
-GET  /books/:id
-POST /books/reserve
-GET  /loans
-
-
-Se quiser, posso gerar um arquivo completo em Swagger/OpenAPI.
-
-🖥️ Telas
-
-Se quiser, eu gero:
-
-protótipo em Figma
-
-telas em PNG
-
-wireframes
-
-🤝 Contribuição
-
-Contribuições são bem-vindas!
-
-Faça um fork do projeto
-
-Crie uma branch:
-git checkout -b minha-feature
-
-Commit suas mudanças
-
-Envie um PR
 
 📄 Licença
 
