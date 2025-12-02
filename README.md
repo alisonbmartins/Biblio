@@ -127,3 +127,5 @@ A API segue o padrão REST.
 📄 Licença
 
 Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e distribuir.
+
+ALISON BRAGA MARTINS (mobile, frontend), Raphael Rodrigues de Sousa (backend).
